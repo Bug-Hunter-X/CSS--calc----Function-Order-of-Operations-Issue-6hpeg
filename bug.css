@@ -1,0 +1,9 @@
+The following CSS code snippet demonstrates an uncommon error that can occur when using the `calc()` function with percentages and other units.  The issue is related to the order of operations and how the browser interprets the calculation, potentially resulting in unexpected results or layout issues.
+
+```css
+.container {
+  width: calc(50% - 10px);
+}
+```
+
+This code intends to make the `.container` element 50% of its parent's width minus 10 pixels. However, depending on the browser and the context, the subtraction might not work as expected. The browser might attempt to subtract 10 pixels from 50% of the parent's width *before* calculating the percentage, leading to incorrect results. 

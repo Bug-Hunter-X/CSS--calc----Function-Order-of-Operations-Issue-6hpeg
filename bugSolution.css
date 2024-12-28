@@ -1,0 +1,12 @@
+The solution is to ensure that percentage calculations happen before any subtractions or additions. The following approach is more robust and reliable:
+
+```css
+.container {
+  width: 50%;
+  margin-left: calc(50% - 10px);
+  margin-right: 10px;
+  transform: translateX(-50%);
+}
+```
+
+Here, we set the width to 50%, and then adjust the position using `margin-left` and `margin-right` to achieve the desired effect. This approach prevents potential order-of-operations problems within the `calc()` function. Alternatively, one might use the `transform` property for positioning the element accurately.
